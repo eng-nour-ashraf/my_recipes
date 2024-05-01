@@ -2,6 +2,7 @@ import 'dart:convert';
 
 import 'package:get/get.dart' as gt;
 import 'package:my_recipes/app/enum/app_status.dart';
+import 'package:my_recipes/app/routes/app_routes.dart';
 
 import '../../../app/const/getX_Ids.dart';
 import '../../../app/log/log_controller.dart';
@@ -45,7 +46,9 @@ class FavouriteController extends gt.GetxController {
 
 //  methods
 
-  void onItemClick({required int index}) {}
+  void onItemClick({required int index}) {
+    gt.Get.toNamed(AppRoutes.details,arguments: recipesListSql[index]);
+  }
 
   Future<void> onLoadRecipesFromSql() async {
     appStatus = AppStatus.loading;
@@ -54,15 +57,21 @@ class FavouriteController extends gt.GetxController {
     for (var element in productsSqlList) {
       final str = jsonDecode(element.productJson!);
       var recipesModel = RecipesModel.fromJson(str);
+      recipesModel.isFavourite = true;
       recipesListSql.add(recipesModel);
     }
     appStatus = AppStatus.success;
     update([GetXIds.favouriteRecipesList]);
   }
 
+  void onRefreshList(){
+    recipesListSql.clear();
+    onLoadRecipesFromSql();
+  }
+
   void onFavourite({required int index}) {
-    recipesListSql.removeAt(index);
     sqlController.deleteItem(recipesListSql[index].id!);
+    recipesListSql.removeAt(index);
     update([GetXIds.favouriteRecipesList]);
   }
 }

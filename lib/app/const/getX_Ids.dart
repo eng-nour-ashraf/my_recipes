@@ -7,4 +7,7 @@ class GetXIds{
 
   //Favourite
   static const favouriteRecipesList = 'favouriteRecipesList';
+
+  //Details
+  static const detailsRecipesInfo = 'detailsRecipesInfo';
 }

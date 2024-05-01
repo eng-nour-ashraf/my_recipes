@@ -1,4 +1,5 @@
 import 'package:get/get.dart';
+import 'package:my_recipes/modules/pages/details/details_view.dart';
 import 'package:my_recipes/modules/pages/home/home_view.dart';
 import 'package:my_recipes/modules/pages/login/login_view.dart';
 import '../../modules/pages/splash/splash_view.dart';
@@ -19,6 +20,10 @@ class AppPages {
     GetPage(
       name: AppRoutes.home,
       page: () => const HomeView(),
+    ),
+    GetPage(
+      name: AppRoutes.details,
+      page: () => const DetailsView(),
     ),
   ];
 }

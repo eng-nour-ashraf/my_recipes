@@ -11,6 +11,7 @@ import 'package:pull_to_refresh/pull_to_refresh.dart';
 
 import '../../../app/log/log_controller.dart';
 import '../../../app/network/models/recipes_model.dart';
+import '../../../app/routes/app_routes.dart';
 import '../../../app/sql/sql_controller.dart';
 
 class MainController extends gt.GetxController {
@@ -79,7 +80,7 @@ class MainController extends gt.GetxController {
   }
 
   void onItemClick({required int index}) {
-
+    gt.Get.toNamed(AppRoutes.details,arguments: recipesList[index]);
   }
 
   void onFavourite({required int index}) {
