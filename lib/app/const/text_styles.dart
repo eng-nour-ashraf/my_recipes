@@ -114,7 +114,7 @@ class AppTextStyles {
       color: color,
       height: height,
       fontWeight: FontWeight.w500,
-      fontSize: 16,
+      fontSize: 18,
     );
   }
 }

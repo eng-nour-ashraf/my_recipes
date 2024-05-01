@@ -24,6 +24,9 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     // init Route
     var initRoute = AppRoutes.splash;
+    if(getStorage.read('isLogin') ?? false){
+      initRoute = AppRoutes.home;
+    }
 
     return GetMaterialApp(
       title: 'my-Recipes',

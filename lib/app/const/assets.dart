@@ -1,6 +1,8 @@
 class AppAssets{
   static String logo = 'logo'.png;
   static String wifi = 'wifi'.png;
+  static String bg = 'bg'.jpg;
+  static String bg2 = 'bg2'.jpg;
 }
 
 

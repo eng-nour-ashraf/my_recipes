@@ -9,13 +9,11 @@ class SplashImg extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Hero(
-      tag: AppConstants.logoHeroID,
-      child: Image.asset(
-        AppAssets.logo,
-        width: MediaQuery.of(context).size.width < 390 ? 186: 246,
-        height: MediaQuery.of(context).size.width < 390  ? 204: 264,
-      ),
+    return Image.asset(
+      AppAssets.bg2,
+      width: MediaQuery.of(context).size.width,
+      height: MediaQuery.of(context).size.height / 2,
+      fit: BoxFit.fill,
     );
   }
 }

@@ -12,7 +12,7 @@ class PullToRefresh extends StatelessWidget {
 
   const PullToRefresh(
       {Key? key,
-      this.color = AppColors.secondaryColor,
+      this.color = AppColors.gold3Color,
       required this.controller,
       required this.onRefresh,
       required this.child})

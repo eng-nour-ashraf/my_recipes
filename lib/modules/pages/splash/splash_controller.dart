@@ -1,4 +1,5 @@
 import 'package:get/get.dart' as gt;
+import 'package:my_recipes/app/routes/app_routes.dart';
 import '../../../app/log/log_controller.dart';
 import '../../../app/pref/pref_controller.dart';
 
@@ -19,7 +20,6 @@ class SplashController extends gt.GetxController {
   @override
   void onInit() {
     logController.onRed(msg: 'Init Splash');
-    onSplash();
     super.onInit();
   }
 
@@ -41,20 +41,8 @@ class SplashController extends gt.GetxController {
 
   //  Methods
 
-  Future<void> onSplash() async {
-
-    Future.delayed(const Duration(seconds: 3),(){
-      // if(prefController.isFirstTime){
-      //   gt.Get.offNamed(AppRoutes.initLang,);
-      // }else{
-      //   if(prefController.isLogin){
-      //     gt.Get.offNamed(AppRoutes.home,);
-      //   }else{
-      //     gt.Get.offNamed(AppRoutes.auth,);
-      //   }
-      //
-      // }
-    },);
+  onLogin() {
+    gt.Get.toNamed(AppRoutes.login);
   }
 
 }

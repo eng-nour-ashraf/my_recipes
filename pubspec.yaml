@@ -32,6 +32,8 @@ dependencies:
   internet_connection_checker: ^1.0.0+1
   pull_to_refresh:
   flutter_staggered_animations:
+  sqflite:
+  path:
 
 dev_dependencies:
   flutter_test:
